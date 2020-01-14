@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
     <title>HTML 5 Drag and Drop Shopping Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">	
 	
 	<style>
-		ul, li{
-			list-style: none;
-			margin: 0px;
-			padding: 0px;
+		#dragndrop-cart section#cart ul {
+			min-height: 200px;
+			border-style: dashed;
+			border-color: #CBD5E0;
+			padding: 10px;
+		}
+		#dragndrop-cart #cart,
+		#dragndrop-cart #products {
+			width: 50%;
+			float: left;
+		}
+		#dragndrop-cart figure {
+			width: 200px;
+			margin: 10px;
+			display: inline-block;
 			cursor: pointer;
 		}
-		section#cart ul{
-			height: 200px;			
-			overflow: auto;
-			background-color: #cccccc;
+		#dragndrop-cart img {
+			/* important, because you don't want to drag the img, but the whole figure */
+			pointer-events: none;
 		}
 	</style>
+
 	<script>
 		function addEvent(element, event, delegate ) {
 			if (typeof (window.event) != 'undefined' && element.attachEvent)
@@ -30,12 +41,12 @@
 			if ( document.readyState !== "complete" ) 
 				return true;
 				
-			var items = document.querySelectorAll("section.products ul li");
+			var items = document.querySelectorAll("section#products figure");
 			var cart = document.querySelectorAll("#cart ul")[0];
 			
 			function updateCart(){
 				var total = 0.0;
-				var cart_items = document.querySelectorAll("#cart ul li")
+				var cart_items = document.querySelectorAll("#cart figure")
 				for (var i = 0; i < cart_items.length; i++) {
 					var cart_item = cart_items[i];
 					var quantity = cart_item.getAttribute('data-quantity');
@@ -83,7 +94,7 @@
 				var id = event.dataTransfer.getData("Text");
 				var item = document.getElementById(id);			
 							
-				var exists = document.querySelectorAll("#cart ul li[data-id='" + id + "']");
+				var exists = document.querySelectorAll("#cart figure[data-id='" + id + "']");
 				
 				if(exists.length > 0){
 					updateCartItem(exists[0]);
@@ -123,24 +134,41 @@
 	</script>
 </head>
 <body>
-    <div id="page">	
-		<section id="cart" class="shopping-cart">
+    <div id="dragndrop-cart">
+		<section id="products">
+			<h1>Product List</h1>
+
+			<figure id="product-1" data-price="1.00">
+				<img src="images/1.jpg" alt="">
+				<figcaption>Product 1</figcaption>
+			</figure>
+			<figure id="product-2" data-price="2.00">
+				<img src="images/2.jpg" alt="">
+				<figcaption>Product 2</figcaption>
+			</figure>
+			<figure id="product-3" data-price="3.00">
+				<img src="images/3.jpg" alt="">
+				<figcaption>Product 3</figcaption>
+			</figure>
+			<figure id="product-4" data-price="4.00">
+				<img src="images/4.jpg" alt="">
+				<figcaption>Product 4</figcaption>
+			</figure>
+			<figure id="product-5" data-price="5.00">
+				<img src="images/5.jpg" alt="">
+				<figcaption>Product 5</figcaption>
+			</figure>
+			<figure id="product-6" data-price="6.00">
+				<img src="images/6.jpg" alt="">
+				<figcaption>Product 6</figcaption>
+			</figure>
+			
+		</section>
+		<section id="cart">
 			<h1>Shopping Cart</h1>
 			<ul>
 			</ul>
 			<span class="total">0.00</span>
-		</section>
-		<section id="products" class="products">
-			<h1>Product List</h1>
-			<ul>
-				<li id="product-1" data-price="2.00"><span>Product 1</span></li>
-				<li id="product-2" data-price="3.00"><span>Product 2</span></li>
-				<li id="product-3" data-price="2.99"><span>Product 3</span></li>
-				<li id="product-4" data-price="3.50"><span>Product 4</span></li>
-				<li id="product-5" data-price="4.25"><span>Product 5</span></li>
-				<li id="product-6" data-price="6.75"><span>Product 6</span></li>
-				<li id="product-7" data-price="1.99"><span>Product 7</span></li>
-			</ul>
 		</section>
 	</div> 	
 </body>
