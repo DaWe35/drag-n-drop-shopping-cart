@@ -30,7 +30,7 @@
 	</style>
 
 	<script>
-		function addEvent(element, event, delegate ) {
+		function addEvent(element, event, delegate) {
 			if (typeof (window.event) != 'undefined' && element.attachEvent)
 				element.attachEvent('on' + event, delegate);
 			else 
@@ -57,7 +57,6 @@
 					
 					total += sub_total;
 				}
-				
 				document.querySelectorAll("#cart span.total")[0].innerHTML = total.toFixed(2);
 			}
 			
@@ -86,12 +85,12 @@
 				span[0].innerHTML = ' x ' + quantity;
 			}
 			
-			function onDrop(event){			
-				if(event.preventDefault) event.preventDefault();
+			function onDrop(event){
+				if (event.preventDefault) event.preventDefault();
 				if (event.stopPropagation) event.stopPropagation();
 				else event.cancelBubble = true;
 				
-				var id = event.dataTransfer.getData("Text");
+				var id = event.target.id || event.dataTransfer.getData("Text");
 				var item = document.getElementById(id);			
 							
 				var exists = document.querySelectorAll("#cart figure[data-id='" + id + "']");
@@ -129,6 +128,7 @@
 				var item = items[i];
 				item.setAttribute("draggable", "true");
 				addEvent(item, 'dragstart', onDrag);
+				addEvent(item, 'dblclick', onDrop);
 			};
 		});
 	</script>
