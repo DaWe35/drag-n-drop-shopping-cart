@@ -5,72 +5,90 @@
 	<meta charset="utf-8" />
 	<title>Drag and Drop Shopping Cart</title>
 	<link rel="stylesheet" href="cart_2/htmldemodraganddrop.css" />
+	<link rel="stylesheet" href="cart_2/bootstrap_grid_only.css">
 </head>
 <body>
 	<!-- icons from  http://www.iconfinder.net/search/?q=iconset:superpack | author site : http://officinadigitale.forumcommunity.net/-->
-	<ul id="products">
-		<li><a class="item" href="#" id="imac" draggable="true">
-			<img src="images/imac.png" />
-			<div>
-				<p><strong>iMac</strong></p>
-				<p><strong>Price</strong>: <span>$1199.00</span></p>
-				<p><strong>Quantity</strong>: <span>10</span></p>
+	<div class="container-fluid">
+		<div class="row">
+			<ul id="products" class="col-lg-7 col-md-12">
+				<li><a class="item" href="#" id="imac" draggable="true">
+					<img src="images/imac.png" />
+					<div>
+						<p>iMac</p>
+						<p>$1199.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="iphone" draggable="true">
+					<img src="images/iphone.png" />
+					<div>
+						<p>iPhone</p>
+						<p>$199.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="appletv" draggable="true">
+					<img src="images/appletv.png" />
+					<div>
+						<p>AppleTV</p>
+						<p>$299.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="dislpay" draggable="true">
+					<img src="images/display.png" />
+					<div>
+						<p>Cinema Display</p>
+						<p>$899.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="nano" draggable="true">
+					<img src="images/nano.png" />
+					<div>
+						<p>iPod Nano</p>
+						<p>$149.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="macbook" draggable="true">
+					<img src="images/macbook.png" />
+					<div>
+						<p>Macbook</p>
+						<p>$1199.00</p>
+					</div>
+				</a></li>
+				<li><a class="item" href="#" id="mini" draggable="true">
+					<img src="images/mini.png" />
+					<div>
+						<p>Mac Mini</p>
+						<p>$599.00</p>
+					</div>
+				</a></li>
+			</ul>
+			<div id="cart" class="col-md-12 col-lg-5">
+				<h1>Shopping Cart</h1>
+					<div id="cart_sample" class="cart-item-sample">
+						<img src="images/appletv.png" class="cart-img" />
+						<div class="description">
+							<span>SAMPLE</span>
+							<span>$324</span>
+						</div>
+
+						<div class="quantity">
+							<button class="plus-btn" type="button" name="button" onclick="plus('sample')">
+							<img src="images/plus.svg" alt="">
+							</button>
+							<input type="number" name="sample" value="1" min="1" onkeyup="setQty(event, 'sample')">
+							<button class="minus-btn" type="button" name="button" onclick="minus('sample')">
+							<img src="images/minus.svg" alt="">
+							</button>
+						</div>
+						<span class="delete-btn" onclick="remove('sample')"></span>
+					</div>
+				
+				<!-- Insert items here with js (before #total) -->
+				
+				<p id="total">Total: $<span>0.00</span></p>
+				<h2 class="drophere">Drop here to add to cart</h2>
 			</div>
-		</a></li>
-		<li><a class="item" href="#" id="iphone" draggable="true">
-			<img src="images/iphone.png" />
-			<div>
-				<p><strong>iPhone</strong></p>
-				<p><strong>Price</strong>: <span>$199.00</span></p>
-				<p><strong>Quantity</strong>: <span>16</span></p>
-			</div>
-		</a></li>
-		<li><a class="item" href="#" id="appletv" draggable="true">
-			<img src="images/appletv.png" />
-			<div>
-				<p><strong>AppleTV</strong></p>
-				<p><strong>Price</strong>: <span>$299.00</span></p>
-				<p><strong>Quantity</strong>: <span>9</span></p>
-			</div>
-		</a></li>
-		<li><a class="item" href="#" id="dislpay" draggable="true">
-			<img src="images/display.png" />
-			<div>
-				<p><strong>Cinema Display</strong></p>
-				<p><strong>Price</strong>: <span>$899.00</span></p>
-				<p><strong>Quantity</strong>: <span>4</span></p>
-			</div>
-		</a></li>
-		<li><a class="item" href="#" id="nano" draggable="true">
-			<img src="images/nano.png" />
-			<div>
-				<p><strong>iPod Nano</strong></p>
-				<p><strong>Price</strong>: <span>$149.00</span></p>
-				<p><strong>Quantity</strong>: <span>20</span></p>
-			</div>
-		</a></li>
-		<li><a class="item" href="#" id="macbook" draggable="true">
-			<img src="images/macbook.png" />
-			<div>
-				<p><strong>Macbook</strong></p>
-				<p><strong>Price</strong>: <span>$1199.00</span></p>
-				<p><strong>Quantity</strong>: <span>13</span></p>
-			</div>
-		</a></li>
-		<li><a class="item" href="#" id="mini" draggable="true">
-			<img src="images/mini.png" />
-			<div>
-				<p><strong>Mac Mini</strong></p>
-				<p><strong>Price</strong>: <span>$599.00</span></p>
-				<p><strong>Quantity</strong>: <span>18</span></p>
-			</div>
-		</a></li>
-	</ul>
-	<div id="cart">
-		<h1>Shopping Cart</h1>
-		<ul></ul>
-		<p id="total"><strong>Total:</strong> $<span>0.00</span></p>
-		<h2>Drop here to add to cart</h2>
+		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="cart_2/jquery.ndd.js"></script>
