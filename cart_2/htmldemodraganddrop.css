@@ -29,8 +29,8 @@ p { margin:0; }
 }
 .item {
 	display: inline-block;
-	width: 180px;
-	height: 180px;
+	width: 155px;
+	height: 155px;
 	margin: 10px;
 	border: 1px solid #CFD8DC;
 	text-align: center;
@@ -42,8 +42,9 @@ p { margin:0; }
 .item img {
 	border: 0;
 	margin: 10px auto;
-	width: 160px;
-	height: 160px;
+	width: 90%;
+	max-height: 90%;
+	height: auto;
 }
 .item div {
 	position: relative;
@@ -174,5 +175,9 @@ body #cart_sample {
 		position: fixed;
 		height: 100vh;
 		right: 0;
+	}
+	.item {
+		width: 180px;
+		height: 180px;
 	}
 }
