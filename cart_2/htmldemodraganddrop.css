@@ -27,9 +27,6 @@ p { margin:0; }
 	list-style: none;
 	padding: 0;
 }
-#products li {
-	display:inline;
-}
 .item {
 	display: inline-block;
 	width: 180px;
