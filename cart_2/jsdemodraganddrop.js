@@ -27,7 +27,7 @@ $('.item').click(function(event) {
 
 function addToCart(id) {
 	$("#cart").removeClass('cart-border');
-
+	$('#'+id).addClass('in-cart');
 
 	if (inCart(id)) {
 		plus(id)
@@ -82,6 +82,7 @@ function minus(id, remove = false) {
 }
 
 function remove(id) {
+	$('#'+id).removeClass('in-cart');
 	rmFromArr(cart, id)
 	render_cart()
 }

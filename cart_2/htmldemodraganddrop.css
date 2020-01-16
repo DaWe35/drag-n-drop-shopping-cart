@@ -166,7 +166,12 @@ body #cart_sample {
 	display: none;
 }
 
-@media (min-width: 992px) {
+.in-cart {
+	-webkit-filter: opacity(50%) grayscale(50%); /* Safari 6.0 - 9.0 */
+	filter: opacity(50%) grayscale(50%);
+}
+
+@media (min-width: 1200px) {
 	#cart {
 		position: fixed;
 		height: 100vh;
