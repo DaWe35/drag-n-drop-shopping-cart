@@ -166,6 +166,7 @@ body #cart_sample {
 .in-cart {
 	-webkit-filter: opacity(50%) grayscale(50%); /* Safari 6.0 - 9.0 */
 	filter: opacity(50%) grayscale(50%);
+	border: none;
 }
 
 @media (min-width: 1200px) {
