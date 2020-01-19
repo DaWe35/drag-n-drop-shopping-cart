@@ -64,8 +64,10 @@
 				</a></li>
 			</ul>
 			<div id="cart" class="col-md-12 col-lg-5">
-				<h1>Shopping Cart</h1>
-					<div id="cart_sample" class="cart-item-sample">
+				<div class="cart-container">
+					<h1>Shopping Cart</h1>
+					
+					<div id="cart_sample" class="cart-item-sample row">
 						<img src="images/appletv.png" class="cart-img" />
 						<div class="description">
 							<span>SAMPLE</span>
@@ -83,11 +85,12 @@
 						</div>
 						<span class="delete-btn" onclick="remove('sample')"></span>
 					</div>
-				
-				<!-- Insert items here with js (before #total) -->
-				
-				<p id="total">Total: $<span>0.00</span></p>
-				<h2 class="drophere">Drop here to add to cart</h2>
+					
+					<!-- Insert items here with js (before #total) -->
+					
+					<p id="total">Total: $<span>0.00</span></p>
+					<h2 class="drophere">Drop here to add to cart</h2>
+				</div>
 			</div>
 		</div>
 	</div>
