@@ -63,7 +63,7 @@ function render_cart() {
 		divClone.find('input').val(qty);
 		divClone.find('input').attr('onkeyup', "setQty(event, '" + id + "')");
 		divClone.attr("id", "cart_item_" + id);
-		divClone.attr("class", "cart-item");
+		divClone.attr("class", "cart-item row");
 		$(divClone).insertBefore('#total');		
 	}
 	

@@ -102,15 +102,14 @@ button[class*="btn"] {
 }
 
 .minus-btn img {
-    margin-bottom: 3px;
+	margin-bottom: 3px;
 }
 
-.description {
-	margin-right: 40px;
-	width: 160px;
-	display: table-cell;
-	padding-top: 40px;
+.minus-btn {
+	margin-bottom: 10px;
 }
+
+
 
 .description span {
     display: block;
@@ -129,18 +128,12 @@ button[class*="btn"] {
     margin-bottom: 5px;
 }
 
-.quantity {
-    padding-top: 40px;
-    margin-right: 0px;
-}
-
 .delete-btn {
+	display: block;
     cursor: pointer;
     width: 18px;
     height: 17px;
 	background: url("../images/delete-icn.svg") no-repeat bottom;
-	padding-top: 62px;
-	margin-left: 70px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -156,8 +149,8 @@ input[type=number] {
 }
 
 .cart-img {
-	width: 120px;
-	margin-right: 20px;
+	max-width: 120px;
+	width: 100%;
 }
 
 body #cart_sample {
@@ -184,5 +177,45 @@ body #cart_sample {
 	.item {
 		width: 180px;
 		height: 180px;
+	}
+}
+
+@media (min-width: 510px) {
+	.description {
+		padding-top: 20px;
+	}
+	
+	.quantity {
+		padding-top: 20px;
+	}
+	
+	.delete-btn {
+		padding-top: 31px;
+	}
+}
+
+@media (min-width: 600px) {
+	.description {
+		padding-top: 40px;
+	}
+	
+	.quantity {
+		padding-top: 40px;
+	}
+	
+	.delete-btn {
+		padding-top: 62px;
+	}
+}
+
+@media (max-width: 600px) {
+	.del-col {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	
+	.cart-item {
+		border-bottom: #CFD8DC solid 1px;
+		padding-top: 15px;
 	}
 }
