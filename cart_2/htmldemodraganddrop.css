@@ -190,7 +190,7 @@ body #cart_sample {
 	}
 	
 	.delete-btn {
-		padding-top: 31px;
+		padding-top: 41px;
 	}
 }
 
@@ -213,7 +213,7 @@ body #cart_sample {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
 	}
-	
+
 	.cart-item {
 		border-bottom: #CFD8DC solid 1px;
 		padding-top: 15px;
