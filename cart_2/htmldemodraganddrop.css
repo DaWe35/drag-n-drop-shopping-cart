@@ -1,25 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
-
+:root {
+	--bg-gray: #F3F5F7;
+}
 html {
 	height:100%;
 }
 body {
-	background: #ECEFF1;
-	margin:0;
-	padding:0;
+	background: #FFF;
+	margin: 0;
+	padding: 0;
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
 }
-h1, h2 { text-align:center; }
-h2.drophere {
-	position:absolute;
-	bottom: 20px;
-	color:#000;
-	text-shadow:0 0 10px rgba(0, 0, 0, 0.75);
-	display:none;
+h1, h2 {
+	text-align: center;
 }
-p { margin:0; }
-
+h2.drophere {
+	position: absolute;
+	bottom: 20px;
+	color: #000;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+	display: none;
+}
+p {
+	margin: 0;
+}
 [draggable=true] {
 	cursor: pointer;
 }
@@ -51,20 +56,20 @@ p { margin:0; }
 	padding: 5px 0;
 }
 #cart {
-	background-color:#fff;
+	background-color: var(--bg-gray);
 	padding: 2%;
 	overflow: auto;
-	border: #ECEFF1 dashed 0px;
+	border: #FFF dashed 0px;
 	animation: border 0.5s;
 }
 
 .cart-border {
-	border: #ECEFF1 dashed 4px !important;
+	border: #FFF dashed 4px !important;
 	padding: calc(2% - 4px) !important;
 }
 
 #cart ul {
-	padding:0;
+	padding: 0;
 }
 #cart li {
 	list-style: none;
@@ -89,6 +94,7 @@ button[class*="btn"] {
 }
 
 #cart .cart-item input {
+	background-color: var(--bg-gray);
     border: none;
     text-align: center;
     width: 32px;
@@ -108,8 +114,6 @@ button[class*="btn"] {
 .minus-btn {
 	margin-bottom: 10px;
 }
-
-
 
 .description span {
     display: block;
