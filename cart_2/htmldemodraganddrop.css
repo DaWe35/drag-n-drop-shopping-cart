@@ -31,6 +31,9 @@ p {
 #products {
 	list-style: none;
 	padding: 0;
+	overflow: auto;
+	height: 100vh;
+	margin: 0;
 }
 .item {
 	display: inline-block;
